@@ -73,6 +73,10 @@ class Expense
     @data["url"]
   end
 
+  def dated_on
+    @data["dated_on"]
+  end
+
   def user
     @data["user"]
   end
@@ -117,7 +121,7 @@ class Expense
 
   def attachment_filename
     return unless attachment?
-    [id, attachment.filename].join("-")
+    [dated_on, id, attachment.filename].join("-")
   end
 
   def id
@@ -132,6 +136,10 @@ class Bill
 
   def url
     @data["url"]
+  end
+
+  def dated_on
+    @data["dated_on"]
   end
 
   def reference
@@ -154,7 +162,7 @@ class Bill
 
   def attachment_filename
     return unless attachment?
-    [id, attachment.filename].join("-")
+    [dated_on, id, attachment.filename].join("-")
   end
 
   def id
@@ -169,6 +177,10 @@ class Explanation
 
   def url
     @data["url"]
+  end
+
+  def dated_on
+    @data["dated_on"]
   end
 
   def description
@@ -191,7 +203,7 @@ class Explanation
 
   def attachment_filename
     return unless attachment?
-    [id, attachment.filename].join("-")
+    [dated_on, id, attachment.filename].join("-")
   end
 
   def id
